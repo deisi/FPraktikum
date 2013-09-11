@@ -23,6 +23,7 @@ a, b, c, d, e  = plsq[0], plsq[1], plsq[2], plsq[3], plsq[4]
 np.set_printoptions(precision=2)
 print cov
 yFit = func(xData, a, b, c, d, e)
+print "Param for UpFit ist:", 'a= ', a,' b= ', b, ' c =', c,' d= ', d,' e= ', e
 
 # Chisquare test
 S              = np.sum(residuals(xData,yData, a, b, c, d, e)/(yerr**2))
@@ -39,8 +40,8 @@ print 'chimin:' +str('%.2f'%chimin),'chimax:' +str('%.2f'%chimax), 'chisquare:'+
 #plt.figure() 
 #plt.subplot(211) 
 #plt.title(r'Ein vielsagender Titel')
-plt.errorbar(xData, yData, yerr, fmt='o', label= r'Up', color='b') 
-plt.plot(xData,yFit, label='Up Fit')
+plt.errorbar(xData, yData, yerr, fmt='o', label= r'Up', color='r') 
+plt.plot(xData,yFit, label='Up Fit', color='r')
 #plt.xlabel(r'x-achse $[m]$')
 #plt.ylabel(r'y-achse $[s]$') 
 #leg = plt.legend(loc='best', fancybox=True)   # Durchsichtige Legend sehr geil 
@@ -66,6 +67,8 @@ a, b, c, d, e  = plsq[0], plsq[1], plsq[2], plsq[3], plsq[4]
 np.set_printoptions(precision=2)
 print cov
 yFit = func(xData, a, b, c, d, e)
+print "Param for DoFit ist:", 'a= ', a,' b= ', b, ' c =', c,' d= ', d,' e= ', e
+
 
 # Chisquare test
 S              = np.sum(residuals(xData,yData, a, b, c, d, e)/(yerr**2))
@@ -83,7 +86,7 @@ print 'chimin:' +str('%.2f'%chimin),'chimax:' +str('%.2f'%chimax), 'chisquare:'+
 #plt.subplot(211) 
 plt.title(r'Hysterese des Magneten')
 plt.errorbar(xData, yData, yerr, fmt='x', label= r'Down', color='g') 
-plt.plot(xData,yFit, label='Down Fit')
+plt.plot(xData,yFit, label='Down Fit', color='g')
 plt.xlabel(r'Strom I in $[A]$')
 plt.ylabel(r'Mag. Feld B in $[mT]$') 
 leg = plt.legend(loc='best', fancybox=True)   # Durchsichtige Legend sehr geil 

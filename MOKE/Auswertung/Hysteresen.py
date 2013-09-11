@@ -5,15 +5,31 @@
 # 
 #  0. You just DO WHAT THE FUCK YOU WANT TO.
 ''' Plot the Hysterese Curves '''
-import numpy as np
+from kalibration import kalUpI, kalDoI
+from upAndDown import upAndDown
+from numpy import *
 import matplotlib.pyplot as plt
 import pylab as py
 from scipy.optimize import minimize, leastsq, curve_fit
 from scipy.stats import chi2
 
-# Get data Up
-data  = np.genfromtxt('../Daten/Kerr Winkel/Haesler10mal30ms.txt',delimiter=";")
-xData = data.T[0]
-yData = data.T[1]
-yerr  = 5*np.ones(len(xData))
-print data
+# Get data
+data  = genfromtxt('../Daten/Kerr Winkel/Si10mal.txt',delimiter=";")
+#yerr  = 5*np.ones(len(xData))
+dataUp, dataDo = upAndDown(data)
+xDataUp, yDataUp = dataUp.T[0], dataUp.T[1]
+xDataDo, yDataDo = dataDo.T[0], dataDo.T[1]
+
+
+plt.figure() 
+#plt.subplot(211) 
+plt.title(r'Ein vielsagender Titel')
+plt.plot(kalUpI(xDataUp), yDataUp, 'x', label= r'Up', color='r') 
+plt.plot(kalDoI(xDataDo), yDataDo, 'x', label= r'Down', color='g') 
+#plt.xlabel(r'Strom I in $[A]$')
+plt.xlabel(r'Mag. Feld B in $[mT]$') 
+leg = plt.legend(loc='best', fancybox=True)   # Durchsichtige Legend sehr geil 
+leg.get_frame().set_alpha(0.5) 
+#plt.savefig('PrettyPlot.png') 
+plt.show()
+
