@@ -5,7 +5,7 @@
 # 
 #  0. You just DO WHAT THE FUCK YOU WANT TO.
 ''' Plot the Hysterese Curves '''
-from kalibration import kalUpI, kalDoI
+from kalibration import calUpI, calDoI
 from upAndDown import upAndDown
 from numpy import *
 import matplotlib.pyplot as plt
@@ -24,8 +24,8 @@ xDataDo, yDataDo = dataDo.T[0], dataDo.T[1]
 plt.figure() 
 #plt.subplot(211) 
 plt.title(r'Ein vielsagender Titel')
-plt.plot(kalUpI(xDataUp), yDataUp, 'x', label= r'Up', color='r') 
-plt.plot(kalDoI(xDataDo), yDataDo, 'x', label= r'Down', color='g') 
+plt.plot(calUpI(xDataUp), yDataUp, 'x', label= r'Up', color='r') 
+plt.plot(calDoI(xDataDo), yDataDo, 'x', label= r'Down', color='g') 
 #plt.xlabel(r'Strom I in $[A]$')
 plt.xlabel(r'Mag. Feld B in $[mT]$') 
 leg = plt.legend(loc='best', fancybox=True)   # Durchsichtige Legend sehr geil 
