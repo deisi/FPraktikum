@@ -108,8 +108,8 @@ def hystFitDo(data): # makes the fit with Calibration for down going Current
     return yFitFunc # returns the fittet function
 
 def hystFit(data): # makes the fit with Calibration from superposition of up and down
-    #xData, yData = np.divide(np.add(calUpI(data.T[0]), calDoI(data.T[0])),2), data.T[1]
-    xData, yData = data.T[0], data.T[1]
+    xData, yData = np.divide(np.add(calUpI(data.T[0]), calDoI(data.T[0])),2), data.T[1]
+    #xData, yData = data.T[0], data.T[1]
     yerr  = 0.1*yData
     #^print data
 

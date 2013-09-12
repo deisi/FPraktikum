@@ -9,12 +9,12 @@ These Functions make up the kalibration for getting from I in [A] to B in [mT] a
 '''
 from numpy import *
 from upAndDown import upAndDown
-#from Fit import hystFit
+from fit import hystFit
 # Get data for storing the fit results to speed it up
-#data  = genfromtxt('../Daten/hysterese.txt')
-#dataUp, dataDo = upAndDown(data)
-#fitUp = hystFit(dataUp)
-#print fitUp(0) 
+data  = genfromtxt('../Daten/hysterese.txt')
+dataUp, dataDo = upAndDown(data)
+fitUp, fitDo = hystFit(dataUp), hystFit(dataDo)
+print fitUp(0), fitDo(0) 
 
 def func(x, a, b, c,d,e):     return e*x**4 + d * x**3 + c* x**2 + b*x+ a
 def calUpI(xdata): 

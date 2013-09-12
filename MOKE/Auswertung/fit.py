@@ -4,7 +4,7 @@ from upAndDown import upAndDown
 import matplotlib.pyplot as plt
 from scipy.optimize import minimize, leastsq, curve_fit
 from scipy.stats import chi2
-''' Method for Fitting Data with curve_fit from scipy to Data returning the params of the Fit'''
+''' Method for Fitting Data with curve_fit from scipy to Data returning the params of the Fit but without the correction due to the kalibrations'''
 
 # Get data for testing
 #data  = np.genfromtxt('../Daten/hysterese.txt')
