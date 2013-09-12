@@ -4,7 +4,6 @@ from upAndDown import upAndDown
 import matplotlib.pyplot as plt
 from scipy.optimize import minimize, leastsq, curve_fit
 from scipy.stats import chi2
-from kalibration import calUpI, calDoI
 ''' Method for Fitting Data with curve_fit from scipy to Data returning the params of the Fit'''
 
 # Get data for testing
@@ -12,7 +11,7 @@ from kalibration import calUpI, calDoI
 #dataUp, dataDo = upAndDown(data)
 
 def hystFitUp(data): # makes the fit with Calibration for up going Current
-    xData, yData = calUpI(data.T[0]), data.T[1]
+    xData, yData = data.T[0], data.T[1]
     yerr  = 0.1*yData
     #^print data
 
@@ -60,7 +59,7 @@ def hystFitUp(data): # makes the fit with Calibration for up going Current
     return yFitFunc # returns the fittet function
 
 def hystFitDo(data): # makes the fit with Calibration for down going Current
-    xData, yData = calDoI(data.T[0]), data.T[1]
+    xData, yData = data.T[0], data.T[1]
     yerr  = 0.1*yData
     #^print data
 

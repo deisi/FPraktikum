@@ -31,4 +31,5 @@ def background(z):
 
     resultUp = zUp - fitUp(zUp)
     resultDo = zUp - fitUp(zDo)
+
     return append(resultUp, resultDo, axis=0)

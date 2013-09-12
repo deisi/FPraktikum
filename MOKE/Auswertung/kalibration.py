@@ -7,12 +7,15 @@
 '''
 These Functions make up the kalibration for getting from I in [A] to B in [mT] and V [mV] to theta_k in [°]
 '''
-#from numpy import *
+from numpy import *
 from upAndDown import upAndDown
-#data  = genfromtxt('../Daten/Kerr Winkel/Si5mal.txt', delimiter=';')
+#from Fit import hystFit
+# Get data for storing the fit results to speed it up
+#data  = genfromtxt('../Daten/hysterese.txt')
 #dataUp, dataDo = upAndDown(data)
-#xDataUp, yDataUp = dataUp.T[0], dataUp.T[1]
-#xDataDo, yDataDo = dataDo.T[0], dataDo.T[1]
+#fitUp = hystFit(dataUp)
+#print fitUp(0) 
+
 def func(x, a, b, c,d,e):     return e*x**4 + d * x**3 + c* x**2 + b*x+ a
 def calUpI(xdata): 
     a ,b ,c ,d ,e = 0.352187630864, 25.1127499637, -0.0158345836053, -0.181478576864, 0.000651791965085
@@ -22,3 +25,4 @@ def calDoI(xdata):
     return func(xdata ,a ,b ,c ,d ,e)
 # TODO make functions for the calibration of V in ° 
 # TODO add something for the errors as well 
+

@@ -20,7 +20,6 @@ dataUp, dataDo = upAndDown(data)
 xDataUp, yDataUp = dataUp.T[0], dataUp.T[1]
 xDataDo, yDataDo = dataDo.T[0], dataDo.T[1]
 
-
 plt.figure() 
 #plt.subplot(211) 
 plt.title(r'Ein vielsagender Titel')
