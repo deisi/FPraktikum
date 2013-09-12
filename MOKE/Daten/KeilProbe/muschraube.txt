@@ -1,0 +1,4 @@
+1 Strich sind 10um
+1 Position sind 150um
+Owis um Schraube
+gedreht in Uhrzeigerrichtung
