@@ -5,14 +5,10 @@
 # 
 #  0. You just DO WHAT THE FUCK YOU WANT TO.
 '''
-These Functions make up the kalibration for getting from I in [A] to B in [mT]
+These Functions make up the kalibration for getting from I in [A] to B in [mT] and V [mV] to theta_k in [°]
 '''
 #from numpy import *
 from upAndDown import upAndDown
-#import matplotlib.pyplot as plt
-#import pylab as py
-#from scipy.optimize import minimize, leastsq, curve_fit
-#from scipy.stats import chi2
 #data  = genfromtxt('../Daten/Kerr Winkel/Si5mal.txt', delimiter=';')
 #dataUp, dataDo = upAndDown(data)
 #xDataUp, yDataUp = dataUp.T[0], dataUp.T[1]
@@ -24,4 +20,5 @@ def kalUpI(xdata):
 def kalDoI(xdata): 
     a ,b ,c ,d ,e = 2.52488224945, 25.089094303, -0.0356744534711, -0.181087079036, -0.00137811774661
     return func(xdata ,a ,b ,c ,d ,e)
-
+# TODO make functions for the calibration of V in ° 
+# TODO add something for the errors as well 
